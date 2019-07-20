@@ -44,18 +44,18 @@
   }
 }
 \setbeamertemplate{title page}{
+  \vspace{-0.5cm}%
   \begin{tikzpicture}[remember picture,overlay]%
-    \node[xshift={\paperwidth/2-(\paperwidth-\textwidth)/2},yshift=-1.5cm]{
+    \node[xshift={\paperwidth/2-(\paperwidth-\textwidth)/2},yshift=-\paperheight/4]{
       \ifx\titechnoimg\undefined
-      \includegraphics[width=\paperwidth]{img/sakura.png}
+      \includegraphics[height=0.5\paperheight]{img/sakura.jpeg}
       \else
       \input{img/sakura.tex}
       \fi
     };%
   \end{tikzpicture}%
   \begin{minipage}[t][\paperheight]{\textwidth}
-    \vspace{1.3cm}%
-    \vspace{0.21875\paperwidth}
+    \vspace{0.5\paperheight}%
     \begin{beamercolorbox}[%
       wd=\paperwidth,%
       sep=0pt,%
@@ -64,10 +64,8 @@
       ]{frametitlebar}%
       \phantom{x}%
     \end{beamercolorbox}%
-    \vspace{-0.21875\paperwidth}%
-    \vspace{2.8cm}%
     \begin{tikzpicture}[remember picture,overlay]%
-      \node[xshift={\paperwidth-2.5cm},yshift=0cm]{%
+      \node[xshift={\paperwidth-2.5cm},yshift=0.1cm]{%
         \ifx\titechnoimg\undefined
         \ifx\titechpdfribbon\undefined
         \includegraphics[width=2cm]{ribbon_big.png}%
@@ -79,6 +77,7 @@
         \fi
       };%
     \end{tikzpicture}%
+    \vspace{-1cm}%
     \ifx\inserttitlegraphic\@empty\else\usebeamertemplate*{title graphic}\fi
     \vfill%
     \ifx\inserttitle\@empty\else\usebeamertemplate*{title}\fi
