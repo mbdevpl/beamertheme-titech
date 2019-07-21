@@ -122,6 +122,46 @@
   \usebeamerfont{frametitle}
   \romannumeral \insertcontinuationcount
 }
+\defbeamertemplate{frametitle}{section}{
+\nointerlineskip%
+\begin{beamercolorbox}[%
+  wd=\paperwidth,%
+  sep=0pt,%
+  leftskip=\titech@frametitle@padding,%
+  rightskip=\titech@frametitle@padding,%
+  ]{frametitlebar}%
+  {\footnotesize \insertsectionnavigationhorizontal{\paperwidth}{}{\hskip0pt plus1filll}}%
+\end{beamercolorbox}%
+\begin{beamercolorbox}[%
+  wd=\paperwidth,%
+  ht=0.5\paperheight,%
+  sep=0pt,%
+  leftskip=\titech@frametitle@padding,%
+  rightskip=\titech@frametitle@padding,%
+  center,%
+  ]{frametitle}%
+  \LARGE%
+  \titech@frametitlestrut@start%
+  \insertframetitle%
+  \nolinebreak%
+  \titech@frametitlestrut@end%
+\end{beamercolorbox}%
+\vspace{-0.5\paperheight}%
+\begin{tikzpicture}[remember picture,overlay]%
+  \node[xshift={\paperwidth/2-0.04cm-1cm},yshift=0.83cm-2cm]{%
+    \ifx\titechnoimg\undefined
+    \ifx\titechpdfribbon\undefined
+    \includegraphics[width=2cm]{ribbon_big.png}%
+    \else
+    \includegraphics[width=2cm]{ribbon_big.pdf}%
+    \fi
+    \else
+    \input{ribbon_small.tex}
+    \fi
+  };%
+\end{tikzpicture}%
+\vspace{0.5\paperheight}%
+}
 \newlength{\titech@progressinheadfoot}
 \newlength{\titech@progressinheadfoot@linewidth}
 \setlength{\titech@progressinheadfoot@linewidth}{2pt}
